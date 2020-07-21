@@ -4,6 +4,7 @@ import json
 import requests
 import base64
 import logging
+import time
 
 data = {			#下面是打卡数据，没有备注的字段均是未知，字段大部分是拼音首拼
     "jbsks": "否",
@@ -12,24 +13,24 @@ data = {			#下面是打卡数据，没有备注的字段均是未知，字段�
     "jbslt": "否",
     "jbsyt": "否",
     "jbsfx": "否",
-    "name": "",					#姓名
-    "xh": "",					#学号
-    "xb": "",					#性别
-    "latitude": 29.575339,	        	#北纬
-    "longitude": 106.596929,			#东经
-    "locationBig": "中国,重庆市,重庆市,南岸区",	#大区位置
-    "locationSmall": "重庆市南岸区石溪路",	 #定位
-    "lxdh": "13752961731",			#手机号码
-    "szdq": "重庆市,重庆市,南岸区",		 #现在位置
-    "xxdz": "涂山路xxx号",	        	     #现在住址
-    "hjsfly": "否",				#坐过飞机(??)
-    "ywjchblj": "无",				#有无接触湖北旅居人员
-    "ywjcqzbl": "无",				#有无接触确诊病例
-    "xjzdywqzbl": "无",				#现居住地有无疑似病例
-    "twsfzc": "是",				#体温是否正常
+    "name": "",                                 #姓名
+    "xh": "",                                   #学号
+    "xb": "",					                #性别
+    "latitude": 29.575339,	        	        #北纬
+    "longitude": 106.596929,                    #东经
+    "locationBig": "中国,重庆市,重庆市,南岸区",    #大区位置
+    "locationSmall": "重庆市南岸区石溪路",        #定位
+    "lxdh": "123123456789",	                    #手机号码
+    "szdq": "重庆市,重庆市,南岸区",               #现在位置
+    "xxdz": "涂山路xxx号",                       #现在住址
+    "hjsfly": "否",                             #坐过飞机(??)
+    "ywjchblj": "无",                           #有无接触湖北旅居人员
+    "ywjcqzbl": "无",                           #有无接触确诊病例
+    "xjzdywqzbl": "无",                         #现居住地有无疑似病例
+    "twsfzc": "是",                             #体温是否正常
     "ywytdzz": "无",
-    "brsfqz": "无",				#本人是否确诊
-    "brsfys": "无",				#本人是否疑似
+    "brsfqz": "无",                             #本人是否确诊
+    "brsfys": "无",                             #本人是否疑似
     "jbs": "无",
     "sfyfy": "无",
     "fyjtgj": "无",
@@ -38,9 +39,9 @@ data = {			#下面是打卡数据，没有备注的字段均是未知，字段�
     "sfjjgl": "无",
     "jjglqssj": "无",
     "wjjglmqqx": "无",
-    "beizhu": "无",				#备注
+    "beizhu": "无",                              #备注
     "qtycqk": "无",
-    "timestamp": int(time.time())		 #时间戳
+    "timestamp": int(time.time())                #时间戳
 
 def main(*args):
 
